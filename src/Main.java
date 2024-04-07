@@ -44,6 +44,10 @@ public class Main {
                 ProblemNine problem9 = new ProblemNine();
                 problem9.demo();
                 break;
+            case 10:
+                ProblemTen problem10 = new ProblemTen();
+                problem10.demo();
+                break;
             default:
                 System.out.println("Invalid problem number");
                 break;
