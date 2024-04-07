@@ -1,4 +1,5 @@
 import Solutions.ProblemOne;
+import Solutions.ProblemThree;
 import Solutions.ProblemTwo;
 
 import java.util.Scanner;
@@ -16,6 +17,10 @@ public class Main {
             case 2:
                 ProblemTwo problemTwo = new ProblemTwo();
                 problemTwo.demo();
+                break;
+            case 3:
+                ProblemThree problemThree = new ProblemThree();
+                problemThree.demo();
                 break;
             default:
                 System.out.println("Invalid problem number");
