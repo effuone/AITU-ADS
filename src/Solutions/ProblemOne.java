@@ -7,22 +7,24 @@ import java.util.function.Supplier;
 
 public class ProblemOne {
 
-    public static int findMinimum(int[] arr, int index, int n) {
-        // Base case: if there's only one element left, it's the minimum
-        if (index == n - 1) {
-            return arr[index];
+    // Method to find the minimum element in array
+    public static int findMinimum(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be null or empty");
         }
 
-        // Find the minimum in the rest of the array
-        int minOfRest = findMinimum(arr, index + 1, n);
-
-        // Return the minimum between the current element and the minimum of the rest
-        return Math.min(arr[index], minOfRest);
+        int min = arr[0]; // Start with the first element as the minimum
+        for (int i = 1; i < arr.length; i++) { // Start from the second element
+            if (arr[i] < min) {
+                min = arr[i]; // Update min if a smaller element is found
+            }
+        }
+        return min;
     }
 
     public void demo() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Problem 1: Finding array minimum using recursion.");
+        System.out.println("Problem 1: Finding array minimum.");
         System.out.println("Do you want to use the default input values? (yes/no)");
         String choice = scanner.next();
 
@@ -44,14 +46,14 @@ public class ProblemOne {
             }
         }
 
-        Supplier<Integer> findMinimumSupplier = () -> findMinimum(arr, 0, arr.length);
+        // Using Supplier to measure execution time
+        Supplier<Integer> findMinimumSupplier = () -> findMinimum(arr);
 
         long timeTaken = Benchmarker.measureExecutionTime(findMinimumSupplier);
 
-        int minElement = findMinimumSupplier.get();
+        int minElement = findMinimumSupplier.get(); // Get the minimum element using the supplier
 
         System.out.println("\nThe minimum element is: " + minElement);
         System.out.println("Execution time: " + timeTaken + " milliseconds");
     }
 }
-
