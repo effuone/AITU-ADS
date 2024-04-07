@@ -1,7 +1,4 @@
-import Solutions.ProblemFour;
-import Solutions.ProblemOne;
-import Solutions.ProblemThree;
-import Solutions.ProblemTwo;
+import Solutions.*;
 
 import java.util.Scanner;
 
@@ -26,6 +23,10 @@ public class Main {
             case 4:
                 ProblemFour problemFour = new ProblemFour();
                 problemFour.demo();
+                break;
+            case 5:
+                ProblemFive problemFive = new ProblemFive();
+                problemFive.demo();
                 break;
             default:
                 System.out.println("Invalid problem number");
