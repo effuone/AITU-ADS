@@ -7,32 +7,28 @@ import java.util.function.Supplier;
 
 public class ProblemTwo {
 
-    // Recursive function to compute the sum of array elements
-    private static double sumArray(int[] arr, int index) {
-        if (index == arr.length - 1) {
-            return arr[index]; // Base case: return the last element
-        }
-        return arr[index] + sumArray(arr, index + 1); // Recursive step: element + sum of the rest
-    }
-
-    // Function to calculate the average using the sumArray function
+    // Function to calculate the average of array elements
     public static double findAverage(int[] arr) {
-        if (arr.length == 0) {
-            return 0; // Edge case: empty array
+        if (arr == null || arr.length == 0) {
+            return 0; // Edge case: null or empty array
         }
-        double sum = sumArray(arr, 0); // Start summing from the first element
-        return sum / arr.length; // Calculate average
+
+        double sum = 0; // Initialize sum
+        for (int value : arr) {
+            sum += value; // Sum up the array elements
+        }
+        return sum / arr.length; // Calculate and return the average
     }
 
     public void demo() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Problem 2: Finding the average of array elements using recursion.");
+        System.out.println("Problem 2: Finding the average of array elements without using recursion.");
         System.out.println("Do you want to use the default input values? (yes/no)");
         String choice = scanner.next();
 
         int[] arr;
         if (choice.equalsIgnoreCase("yes")) {
-            arr = new int[]{1, 2, 3, 4};
+            arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
             System.out.println("Using default input values: ");
             for (int value : arr) {
                 System.out.print(value + " ");
@@ -48,14 +44,14 @@ public class ProblemTwo {
             }
         }
 
+        // Using Supplier to measure execution time
         Supplier<Double> findAverageSupplier = () -> findAverage(arr);
 
         long timeTaken = Benchmarker.measureExecutionTime(findAverageSupplier);
 
-        double average = findAverageSupplier.get();
+        double average = findAverageSupplier.get(); // Get the average using the supplier
 
         System.out.printf("\nThe average of the elements is: %.2f%n", average);
         System.out.println("Execution time: " + timeTaken + " milliseconds");
     }
 }
-
