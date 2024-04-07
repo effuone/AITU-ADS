@@ -1,3 +1,4 @@
+import Solutions.ProblemFour;
 import Solutions.ProblemOne;
 import Solutions.ProblemThree;
 import Solutions.ProblemTwo;
@@ -21,6 +22,10 @@ public class Main {
             case 3:
                 ProblemThree problemThree = new ProblemThree();
                 problemThree.demo();
+                break;
+            case 4:
+                ProblemFour problemFour = new ProblemFour();
+                problemFour.demo();
                 break;
             default:
                 System.out.println("Invalid problem number");
