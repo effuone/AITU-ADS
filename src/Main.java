@@ -28,6 +28,10 @@ public class Main {
                 ProblemFive problemFive = new ProblemFive();
                 problemFive.demo();
                 break;
+            case 6:
+                ProblemSix problemSix = new ProblemSix();
+                problemSix.demo();
+                break;
             default:
                 System.out.println("Invalid problem number");
                 break;
