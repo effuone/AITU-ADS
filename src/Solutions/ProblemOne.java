@@ -7,7 +7,17 @@ import java.util.function.Supplier;
 
 public class ProblemOne {
 
-    // Method to find the minimum element in array
+    /**
+     * Finds the minimum element in an array.
+     * Original Problem: Given an array "arr" of "n" elements, find the minimum element.
+     *
+     * Time Complexity: O(n), where n is the number of elements in the array.
+     * This is because the method iterates through each element of the array exactly once.
+     *
+     * @param arr The array from which the minimum element is to be found.
+     * @return The minimum element in the array.
+     * @throws IllegalArgumentException If the array is null or empty.
+     */
     public static int findMinimum(int[] arr) {
         if (arr == null || arr.length == 0) {
             throw new IllegalArgumentException("Array must not be null or empty");
@@ -22,6 +32,10 @@ public class ProblemOne {
         return min;
     }
 
+    /**
+     * Demonstrates finding the minimum element in an array.
+     * Allows the user to input their own array or use default values.
+     */
     public void demo() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Problem 1: Finding array minimum.");
