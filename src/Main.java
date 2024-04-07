@@ -9,32 +9,36 @@ public class Main {
         int problemNumber = scanner.nextInt();
         switch (problemNumber) {
             case 1:
-                ProblemOne problemOne = new ProblemOne();
-                problemOne.demo();
+                ProblemOne problem1 = new ProblemOne();
+                problem1.demo();
                 break;
             case 2:
-                ProblemTwo problemTwo = new ProblemTwo();
-                problemTwo.demo();
+                ProblemTwo problem2 = new ProblemTwo();
+                problem2.demo();
                 break;
             case 3:
-                ProblemThree problemThree = new ProblemThree();
-                problemThree.demo();
+                ProblemThree problem3 = new ProblemThree();
+                problem3.demo();
                 break;
             case 4:
-                ProblemFour problemFour = new ProblemFour();
-                problemFour.demo();
+                ProblemFour problem4 = new ProblemFour();
+                problem4.demo();
                 break;
             case 5:
-                ProblemFive problemFive = new ProblemFive();
-                problemFive.demo();
+                ProblemFive problem5 = new ProblemFive();
+                problem5.demo();
                 break;
             case 6:
-                ProblemSix problemSix = new ProblemSix();
-                problemSix.demo();
+                ProblemSix problem6 = new ProblemSix();
+                problem6.demo();
                 break;
             case 7:
-                ProblemSeven problemSeven = new ProblemSeven();
-                problemSeven.demo();
+                ProblemSeven problem7 = new ProblemSeven();
+                problem7.demo();
+                break;
+            case 8:
+                ProblemEight problem8 = new ProblemEight();
+                problem8.demo();
                 break;
             default:
                 System.out.println("Invalid problem number");
