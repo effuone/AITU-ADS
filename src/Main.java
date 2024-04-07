@@ -1,5 +1,20 @@
+import Solutions.ProblemOne;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the problem number to run (e.g., 1 for ProblemOne):");
+        int problemNumber = scanner.nextInt();
+        switch (problemNumber) {
+            case 1:
+                ProblemOne problemOne = new ProblemOne();
+                problemOne.demo();
+                break;
+            default:
+                System.out.println("Invalid problem number");
+                break;
+        }
     }
 }
