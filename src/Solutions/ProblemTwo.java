@@ -7,7 +7,18 @@ import java.util.function.Supplier;
 
 public class ProblemTwo {
 
-    // Function to calculate the average of array elements
+    /**
+     * Calculates the average of an array of integers.
+     * Original Problem: Given an array "arr" of "n" elements, find the average of these elements.
+     *
+     * Time Complexity: O(n), where n is the number of elements in the array.
+     * This is because the method iterates through each element of the array exactly once to compute the sum,
+     * and then performs a single division operation to find the average.
+     *
+     * @param arr The array from which to calculate the average.
+     * @return The average of the array elements as a double.
+     * @throws IllegalArgumentException If the array is null or empty, as average is undefined in these cases.
+     */
     public static double findAverage(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0; // Edge case: null or empty array
@@ -20,6 +31,10 @@ public class ProblemTwo {
         return sum / arr.length; // Calculate and return the average
     }
 
+    /**
+     * Demonstrates finding the average of an array of integers.
+     * Allows user interaction for inputting array values or using default values for demonstration.
+     */
     public void demo() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Problem 2: Finding the average of array elements without using recursion.");
