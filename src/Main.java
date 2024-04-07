@@ -32,6 +32,10 @@ public class Main {
                 ProblemSix problemSix = new ProblemSix();
                 problemSix.demo();
                 break;
+            case 7:
+                ProblemSeven problemSeven = new ProblemSeven();
+                problemSeven.demo();
+                break;
             default:
                 System.out.println("Invalid problem number");
                 break;
